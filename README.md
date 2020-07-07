@@ -1,2 +1,2 @@
-# introducao-react
-Desenvolvimento do Tutorial de Introdução ao React.
+# Tutorial: Introdução ao React
+Este projeto tem o objetivo de desenvolver o [Tutorial de Introdução ao React](https://pt-br.reactjs.org/tutorial/tutorial.html) proposto pela documentação oficial da biblioteca React.
