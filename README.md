@@ -1,6 +1,6 @@
 # Tutorial: Introdução ao React
 
-Este projeto tem o objetivo de desenvolver o [Tutorial de Introdução ao React](https://pt-br.reactjs.org/tutorial/tutorial.html) proposto pela documentação oficial da biblioteca React.
+Este projeto tem o objetivo de desenvolver o [React Tutorial: An Overview and Walkthrough](https://www.taniarascia.com/getting-started-with-react/) proposto pela documentação oficial da biblioteca React.
 
 # Descrições geradas automaticamente pelo projeto inicial do React
 
