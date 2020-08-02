@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 // Este é um exemplo de Simple Component
 const TableHeader = () => {
@@ -7,6 +7,7 @@ const TableHeader = () => {
       <tr>
         <th>Name</th>
         <th>Job</th>
+        <th>Remove</th>
       </tr>
     </thead>
   )
@@ -19,6 +20,9 @@ const TableBody = (props) => {
       <tr key={index}>
         <td>{row.name}</td>
         <td>{row.job}</td>
+        <td>
+          <button onClick={() => props.removeCharacter(index)}>Delete</button>
+        </td>
       </tr>
     )
   })
@@ -26,18 +30,17 @@ const TableBody = (props) => {
   return <tbody>{rows}</tbody>
 }
 
-// Este é um exemplo de Class Component. Class e Simple components podem ser mistrurados.
-class Table extends Component {
-  render() {
-    const { characterData } = this.props
+// Table antes era um Class Component, mas como não tem estado próprio
+// foi transformado em Simple Component.
+const Table = (props) => {
+  const { characterData, removeCharacter } = props
 
-    return (
-      <table>
-        <TableHeader />
-        <TableBody characterData={characterData} />
-      </table>
-    )
-  }
+  return (
+    <table>
+      <TableHeader />
+      <TableBody characterData={characterData} removeCharacter={removeCharacter} />
+    </table>
+  )
 }
 
 export default Table
