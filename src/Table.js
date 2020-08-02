@@ -1,50 +1,43 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 // Este é um exemplo de Simple Component
 const TableHeader = () => {
-    return (
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Job</th>
-        </tr>
-      </thead>
-    )
-  }
+  return (
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Job</th>
+      </tr>
+    </thead>
+  )
+}
 
-  const TableBody = () => {
+// Sempre podemos usar keys quando estamos fazendo listas no React.
+const TableBody = (props) => {
+  const rows = props.characterData.map((row, index) => {
     return (
-      <tbody>
-        <tr>
-          <td>Charlie</td>
-          <td>Janitor</td>
-        </tr>
-        <tr>
-          <td>Mac</td>
-          <td>Bouncer</td>
-        </tr>
-        <tr>
-          <td>Dee</td>
-          <td>Aspiring actress</td>
-        </tr>
-        <tr>
-          <td>Dennis</td>
-          <td>Bartender</td>
-        </tr>
-      </tbody>
+      <tr key={index}>
+        <td>{row.name}</td>
+        <td>{row.job}</td>
+      </tr>
     )
-  }
+  })
 
-  // Este é um exemplo de Class Component. Class e Simple components podem ser mistrurados.
+  return <tbody>{rows}</tbody>
+}
+
+// Este é um exemplo de Class Component. Class e Simple components podem ser mistrurados.
 class Table extends Component {
-    render() {
-      return (
-        <table>
-            <TableHeader />
-            <TableBody />
-        </table>
-      )
-    }
+  render() {
+    const { characterData } = this.props
+
+    return (
+      <table>
+        <TableHeader />
+        <TableBody characterData={characterData} />
+      </table>
+    )
   }
-  
-  export default Table
+}
+
+export default Table
